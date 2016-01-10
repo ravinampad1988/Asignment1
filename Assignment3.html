@@ -1,0 +1,60 @@
+<html>
+<head>
+<script type="text/javascript">
+
+
+function validateForm() {
+
+var name=document.forms["myForm"]["name"].value;
+if (name==null || name=="")
+ {
+  alert("Name must be filled out");
+  return false;
+ }
+
+var phone=document.forms["myForm"]["phone"].value;
+if (phone==null || phone=="") {
+  alert("Phone number must be filled out");
+  return false;
+}
+
+var email=document.forms["myForm"]["email"].value;
+if (email==null || email=="") {
+  alert("Email must be filled out");
+  return false;
+}
+}
+/*
+var result = (function(email_id){
+                            var regpat = /^[a-zA-Z_\.\-]+@[a-zA-Z_\-\.]+?\.[a-zA-Z]{2,4}$/;
+                            return regpat.test(email_id);
+                        })('email_address@gmail.com');
+            document.write(result);
+
+*/
+
+</script>
+</head>
+
+<body>
+
+<form name="myForm" onsubmit="return validateForm()" method="post">
+Name: <input type="text" name="name"> <br>
+<br>
+Phone: <input type="text" name="phone"><br>
+<br>
+Email: <input type="text" name="email" onsubmit="(function(id){
+                                            var email_id = document.getElementById(id).value;
+                                            function validate(){
+                                                var regpat = /^[a-zA-Z_\.\-]+@[a-zA-Z_\-\.]+?\.[a-zA-Z]{2,4}$/;
+                                                return regpat.test(email_id);
+                                            }
+                                            alert(validate());
+                                        })('email');">
+										<br>
+<br>
+Address: <input type="text" name="address"><br>
+<input type="submit" value="Submit">
+</form>
+</body>
+<html>
